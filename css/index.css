@@ -5,6 +5,124 @@
 	box-sizing: border-box;
 }
 
+div#explore {
+    background: #f1f1f1;
+}
+
+.search-input i {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translate(0,-50%);
+    color: #1f4721;
+}
+
+.search-input {
+    width: 50%;
+    position: relative;
+    margin-top: 1rem;
+}
+
+.search-input input {
+    border-radius: 25px;
+    border: 1px solid #b1b1b1;
+    padding: 0 2.5rem;
+}
+
+.search-input input::placeholder {
+	color: #ababab;
+	word-spacing: -2px;
+}
+.search-input input:focus::placeholder {
+	color: transparent;
+}
+
+.search-input input:focus{
+	border: none;
+}
+
+.nodes-type {
+    padding: 0.5rem;
+}
+
+.nodes-type a {
+    width: 75px;
+    margin: 0 1rem;
+}
+
+.change-col-explore-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div#about {
+    width: 100%;
+    height: auto;
+    background: ghostwhite;
+}
+
+img.about-image {
+    width: inherit;
+    box-shadow: 0px 0px 5px black, 0px 0px 10px #5c5d5c;
+    transition: 2s;
+}
+
+img.about-image:hover {
+    box-shadow: 0px 0px 5px black, 0px 0px 10px #5c5d5c, 0px 0px 20px #5c5d5c;
+}
+
+a.change-btn-explore {
+    width: 30%;
+}
+
+a[class*="btn-"] {
+    transition: 0.3s;
+}
+
+p.about-description {
+    font-weight: 400;
+    text-align: justify;
+}
+
+.row.change-row {padding: 10rem 1rem;}
+
+h2.about-title, h2.explore-title {
+    font-size: 5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    background: linear-gradient(to top, #000000 50%, #00BCD4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2.explore-title {
+    background: linear-gradient(to top, #000000 50%, #4CAF50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2.about-title::before {
+	content: 'about ';
+	text-transform: lowercase;
+	font-weight: 100;
+	-webkit-text-fill-color: black;
+}
+
+h2.explore-title::before {
+    content: 'our ';
+    text-transform: lowercase;
+    font-weight: 100;
+    -webkit-text-fill-color: black;
+}
+
+.col-6.change-col-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 5rem;
+}
+
 span.display-3.title {
     border-radius: 25px;
     padding: 0 0.5rem;

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport"content="width=device-width,initial-scale=1.0, maximum-scale=1">
-	<title>Document</title>
+	<title>Shopping Cart</title>
 	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome/css/all.css">
@@ -26,13 +26,13 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav mr-auto">
 							<li class="nav-item active">
-								<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+								<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">About</a>
+								<a class="nav-link" href="#about">About</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">Explore</a>
+								<a class="nav-link" href="#explore">Explore</a>
 							</li>
 						</ul>
 						<form class="form-inline my-2 my-lg-0 form-change">
@@ -45,7 +45,157 @@
 								<span class="amount" id="number">0</span>
 								items
 								<span class="total-price" id="price">0</span>
-							</div>
+								<div class="list-cart" id="list">
+									<div class="header-list-cart">
+										<h3 class="list-title">shopping cart</h3>
+									</div>
+									<div class="body-list-cart">
+										<ul class="list-group">
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-3 change-item-image">
+														<img src="image/cruiser (4).jpg" alt="cruiser" class="img-thumbnail w-100 shopping-cart-image">
+													</div>
+													<div class="col-6">
+														<p class="shopping-cart-name">cruiser name</p>
+													</div>
+													<div class="col-3 change-price">	
+														<p class="price">10.99</p>
+														<span class="symbol-price">K</span>
+													</div>	
+												</div>
+												<div class="row">
+													<div class="col-12">
+														<i class="fas fa-minus"></i>
+														<input type="text" class="amounts" value="0" readonly>
+														<i class="fas fa-plus"></i>
+													</div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-3 change-item-image">
+														<img src="image/cruiser (2).jpg" alt="cruiser" class="img-thumbnail w-100 shopping-cart-image">
+													</div>
+													<div class="col-6">
+														<p class="shopping-cart-name">cruiser name</p>
+													</div>
+													<div class="col-3 change-price">	
+														<p class="price">22.99</p>
+														<span class="symbol-price">K</span>
+													</div>	
+												</div>
+												<div class="row">
+													<div class="col-12">
+														<i class="fas fa-minus"></i>
+														<input type="text" class="amounts" value="0" readonly>
+														<i class="fas fa-plus"></i>
+													</div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-3 change-item-image">
+														<img src="image/cruiser (6).jpg" alt="cruiser" class="img-thumbnail w-100 shopping-cart-image">
+													</div>
+													<div class="col-6">
+														<p class="shopping-cart-name">cruiser name</p>
+													</div>
+													<div class="col-3 change-price">	
+														<p class="price">67.99</p>
+														<span class="symbol-price">K</span>
+													</div>	
+												</div>
+												<div class="row">
+													<div class="col-12">
+														<i class="fas fa-minus"></i>
+														<input type="text" class="amounts" value="0" readonly>
+														<i class="fas fa-plus"></i>
+													</div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-3 change-item-image">
+														<img src="image/cruiser (1).jpg" alt="cruiser" class="img-thumbnail w-100 shopping-cart-image">
+													</div>
+													<div class="col-6">
+														<p class="shopping-cart-name">cruiser name</p>
+													</div>
+													<div class="col-3 change-price">	
+														<p class="price">67.99</p>
+														<span class="symbol-price">K</span>
+													</div>	
+												</div>
+												<div class="row">
+													<div class="col-12">
+														<i class="fas fa-minus"></i>
+														<input type="text" class="amounts" value="0" readonly>
+														<i class="fas fa-plus"></i>
+													</div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-3 change-item-image">
+														<img src="image/cruiser (1).jpg" alt="cruiser" class="img-thumbnail w-100 shopping-cart-image">
+													</div>
+													<div class="col-6">
+														<p class="shopping-cart-name">cruiser name</p>
+													</div>
+													<div class="col-3 change-price">	
+														<p class="price">67.99</p>
+														<span class="symbol-price">K</span>
+													</div>	
+												</div>
+												<div class="row">
+													<div class="col-12">
+														<i class="fas fa-minus"></i>
+														<input type="text" class="amounts" value="0" readonly>
+														<i class="fas fa-plus"></i>
+													</div>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="row">
+													<div class="col-3 change-item-image">
+														<img src="image/cruiser (1).jpg" alt="cruiser" class="img-thumbnail w-100 shopping-cart-image">
+													</div>
+													<div class="col-6">
+														<p class="shopping-cart-name">cruiser name</p>
+													</div>
+													<div class="col-3 change-price">	
+														<p class="price">67.99</p>
+														<span class="symbol-price">K</span>
+													</div>	
+												</div>
+												<div class="row">
+													<div class="col-12">
+														<i class="fas fa-minus"></i>
+														<input type="text" class="amounts" value="0" readonly>
+														<i class="fas fa-plus"></i>
+													</div>
+												</div>
+											</li>
+											
+										</ul>
+									</div> <!-- end body-list-cart -->
+									<div class="purchase-list-cart">
+										<div class="container">
+											<div class="row">
+												<div class="col-6">
+													<h4 class="purchase-title">total</h4>
+													<span class="purchase-total-price">999.99<span class="symbol-price">K</span></span>
+												</div>
+												<div class="col-6">
+													<a href="#" class="btn btn-outline-dark">purchase</a>
+													<a href="#" class="btn btn-outline-dark">remove all</a>
+												</div>
+											</div>
+										</div>
+									</div><!-- end purchase-list-cart -->
+								</div> <!-- end div.list-cart -->
+							</div> <!-- end div.shopping-cart -->
 						</form>
 					</div>
 				</div>
@@ -81,7 +231,7 @@
 					<div class="col-6 change-col-left">
 						<h2 class="about-title">us</h2>
 						<p class="about-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti. Possimus unde nam obcaecati reiciendis aliquam minima? Quos at nobis, distinctio ipsam.</p>
-						<a href="#" class="btn btn-outline-secondary change-btn-explore">Explore</a>
+						<a href="#explore" class="btn btn-outline-secondary change-btn-explore">Explore</a>
 					</div> <!-- end collunm -->
 					<div class="col-6 change-col-right">
 						<img src="image/about-image.jpg" alt="" class="about-image">
@@ -95,7 +245,7 @@
 					<div class="col-12 change-col-explore-top">
 						<h2 class="explore-title">Store</h2>
 						<div class="nodes-type">
-							<a href="#" class="btn btn-outline-secondary">All</a>
+							<a href="#" class="btn btn-outline-secondary active">All</a>
 							<a href="#" class="btn btn-outline-secondary">Cruiser</a>
 							<a href="#" class="btn btn-outline-secondary">Sport</a>
 							<a href="#" class="btn btn-outline-secondary">Vespa</a>

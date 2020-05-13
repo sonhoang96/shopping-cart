@@ -10,196 +10,154 @@
 	<!-- own style -->
 	<link rel="stylesheet" href="css/index.css">
 	<!-- script -->
-	<script src='js/jquery.js'></script>
-	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src='js/jquery.js' defer=""></script>
+	<script src="js/bootstrap.bundle.min.js" defer=""></script>
 	<script src='js/index.js' defer></script>
 </head>
 <body>
 	<div class="app" id="app">
-		<div class="home" id="home">
-			<nav class="navbar navbar-expand-lg navbar-dark position-fixed w-100 change-navbar">
-				<a href="https://www.freepik.com/free-photos-vectors/background" class='logo'><img src="image/logo.jpg" alt="free-photos-vectors"></a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="container">
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav mr-auto">
-							<li class="nav-item active">
-								<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#about">About</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#explore">Explore</a>
-							</li>
-						</ul>
-						<form class="form-inline my-2 my-lg-0 form-change">
-							<div class="phone mr-5">
-								<i class="fas fa-phone"></i>
-								<span class="phone-number">+84987654321</span>
-							</div>
-							<div class="shopping-cart" id="cart">
-								<i class="fas fa-shopping-cart"></i>
-								<span class="amount" id="number">0</span>
-								items
-								<span class="total-price" id="price">0</span>
-								<div class="list-cart" id="list">
-									<div class="header-list-cart">
-										<h3 class="list-title">shopping cart</h3>
-									</div>
-									<div class="body-list-cart">
-										<ul class="list-group">
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-3 change-item-image">
-														<img src="image/cruiser (4).jpg" alt="cruiser" class="img-thumbnail w-100 shopping-cart-image">
-													</div>
-													<div class="col-6">
-														<p class="shopping-cart-name">cruiser name</p>
-													</div>
-													<div class="col-3 change-price">	
-														<p class="price">10.99</p>
-														<span class="symbol-price">K</span>
-													</div>	
-												</div>
-												<div class="row">
-													<div class="col-12">
-														<i class="fas fa-minus"></i>
-														<input type="text" class="amounts" value="0" readonly>
-														<i class="fas fa-plus"></i>
-													</div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-3 change-item-image">
-														<img src="image/cruiser (2).jpg" alt="cruiser" class="img-thumbnail w-100 shopping-cart-image">
-													</div>
-													<div class="col-6">
-														<p class="shopping-cart-name">cruiser name</p>
-													</div>
-													<div class="col-3 change-price">	
-														<p class="price">22.99</p>
-														<span class="symbol-price">K</span>
-													</div>	
-												</div>
-												<div class="row">
-													<div class="col-12">
-														<i class="fas fa-minus"></i>
-														<input type="text" class="amounts" value="0" readonly>
-														<i class="fas fa-plus"></i>
-													</div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-3 change-item-image">
-														<img src="image/cruiser (6).jpg" alt="cruiser" class="img-thumbnail w-100 shopping-cart-image">
-													</div>
-													<div class="col-6">
-														<p class="shopping-cart-name">cruiser name</p>
-													</div>
-													<div class="col-3 change-price">	
-														<p class="price">67.99</p>
-														<span class="symbol-price">K</span>
-													</div>	
-												</div>
-												<div class="row">
-													<div class="col-12">
-														<i class="fas fa-minus"></i>
-														<input type="text" class="amounts" value="0" readonly>
-														<i class="fas fa-plus"></i>
-													</div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-3 change-item-image">
-														<img src="image/cruiser (1).jpg" alt="cruiser" class="img-thumbnail w-100 shopping-cart-image">
-													</div>
-													<div class="col-6">
-														<p class="shopping-cart-name">cruiser name</p>
-													</div>
-													<div class="col-3 change-price">	
-														<p class="price">67.99</p>
-														<span class="symbol-price">K</span>
-													</div>	
-												</div>
-												<div class="row">
-													<div class="col-12">
-														<i class="fas fa-minus"></i>
-														<input type="text" class="amounts" value="0" readonly>
-														<i class="fas fa-plus"></i>
-													</div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-3 change-item-image">
-														<img src="image/cruiser (1).jpg" alt="cruiser" class="img-thumbnail w-100 shopping-cart-image">
-													</div>
-													<div class="col-6">
-														<p class="shopping-cart-name">cruiser name</p>
-													</div>
-													<div class="col-3 change-price">	
-														<p class="price">67.99</p>
-														<span class="symbol-price">K</span>
-													</div>	
-												</div>
-												<div class="row">
-													<div class="col-12">
-														<i class="fas fa-minus"></i>
-														<input type="text" class="amounts" value="0" readonly>
-														<i class="fas fa-plus"></i>
-													</div>
-												</div>
-											</li>
-											<li class="list-group-item">
-												<div class="row">
-													<div class="col-3 change-item-image">
-														<img src="image/cruiser (1).jpg" alt="cruiser" class="img-thumbnail w-100 shopping-cart-image">
-													</div>
-													<div class="col-6">
-														<p class="shopping-cart-name">cruiser name</p>
-													</div>
-													<div class="col-3 change-price">	
-														<p class="price">67.99</p>
-														<span class="symbol-price">K</span>
-													</div>	
-												</div>
-												<div class="row">
-													<div class="col-12">
-														<i class="fas fa-minus"></i>
-														<input type="text" class="amounts" value="0" readonly>
-														<i class="fas fa-plus"></i>
-													</div>
-												</div>
-											</li>
-											
-										</ul>
-									</div> <!-- end body-list-cart -->
-									<div class="purchase-list-cart">
-										<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark position-fixed w-100 change-navbar">
+			<a href="https://www.freepik.com/free-photos-vectors/background" class='logo'><img src="image/logo.jpg" alt="free-photos-vectors"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="container">
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#about">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#explore">Explore</a>
+						</li>
+					</ul>
+					<form class="form-inline my-2 my-lg-0 form-change">
+						<div class="phone mr-5">
+							<i class="fas fa-phone"></i>
+							<span class="phone-number">+84987654321</span>
+						</div>
+						<div class="shopping-cart" id="cart">
+							<i class="fas fa-shopping-cart"></i>
+							<span class="amount" id="number">0</span>
+							items
+							<span class="total-price" id="price">0</span>
+							<div class="list-cart" id="list">
+								<div class="header-list-cart">
+									<h3 class="list-title">shopping cart</h3>
+								</div>
+								<div class="body-list-cart">
+									<ul class="list-group">
+										<li class="list-group-item">
 											<div class="row">
-												<div class="col-6">
-													<h4 class="purchase-title">total</h4>
-													<span class="purchase-total-price">999.99<span class="symbol-price">K</span></span>
+												<div class="col-3 change-item-image">
+													<img src="image/cruiser (4).jpg" alt="cruiser" class="img-thumbnail w-100 shopping-cart-image">
 												</div>
 												<div class="col-6">
-													<a href="#" class="btn btn-outline-dark">purchase</a>
-													<a href="#" class="btn btn-outline-dark">remove all</a>
+													<p class="shopping-cart-name">cruiser name</p>
+												</div>
+												<div class="col-3 change-price">	
+													<p class="price">10.99</p>
+													<span class="symbol-price">K</span>
+												</div>	
+											</div>
+											<div class="row">
+												<div class="col-12">
+													<i class="fas fa-minus"></i>
+													<input type="text" class="amounts" value="0" readonly>
+													<i class="fas fa-plus"></i>
 												</div>
 											</div>
+										</li>
+										<li class="list-group-item">
+											<div class="row">
+												<div class="col-3 change-item-image">
+													<img src="image/cruiser (2).jpg" alt="cruiser" class="img-thumbnail w-100 shopping-cart-image">
+												</div>
+												<div class="col-6">
+													<p class="shopping-cart-name">cruiser name</p>
+												</div>
+												<div class="col-3 change-price">	
+													<p class="price">22.99</p>
+													<span class="symbol-price">K</span>
+												</div>	
+											</div>
+											<div class="row">
+												<div class="col-12">
+													<i class="fas fa-minus"></i>
+													<input type="text" class="amounts" value="0" readonly>
+													<i class="fas fa-plus"></i>
+												</div>
+											</div>
+										</li>
+										<li class="list-group-item">
+											<div class="row">
+												<div class="col-3 change-item-image">
+													<img src="image/cruiser (6).jpg" alt="cruiser" class="img-thumbnail w-100 shopping-cart-image">
+												</div>
+												<div class="col-6">
+													<p class="shopping-cart-name">cruiser name</p>
+												</div>
+												<div class="col-3 change-price">	
+													<p class="price">67.99</p>
+													<span class="symbol-price">K</span>
+												</div>	
+											</div>
+											<div class="row">
+												<div class="col-12">
+													<i class="fas fa-minus"></i>
+													<input type="text" class="amounts" value="0" readonly>
+													<i class="fas fa-plus"></i>
+												</div>
+											</div>
+										</li>
+										<li class="list-group-item">
+											<div class="row">
+												<div class="col-3 change-item-image">
+													<img src="image/cruiser (6).jpg" alt="cruiser" class="img-thumbnail w-100 shopping-cart-image">
+												</div>
+												<div class="col-6">
+													<p class="shopping-cart-name">cruiser name</p>
+												</div>
+												<div class="col-3 change-price">	
+													<p class="price">67.99</p>
+													<span class="symbol-price">K</span>
+												</div>	
+											</div>
+											<div class="row">
+												<div class="col-12">
+													<i class="fas fa-minus"></i>
+													<input type="text" class="amounts" value="0" readonly>
+													<i class="fas fa-plus"></i>
+												</div>
+											</div>
+										</li>
+										
+									</ul>
+								</div> <!-- end body-list-cart -->
+								<div class="purchase-list-cart">
+									<div class="container">
+										<div class="row">
+											<div class="col-6">
+												<h4 class="purchase-title">total</h4>
+												<span class="purchase-total-price">999.99<span class="symbol-price">K</span></span>
+											</div>
+											<div class="col-6">
+												<a href="#" class="btn btn-outline-dark">purchase</a>
+												<a href="#" class="btn btn-outline-dark">remove all</a>
+											</div>
 										</div>
-									</div><!-- end purchase-list-cart -->
-								</div> <!-- end div.list-cart -->
-							</div> <!-- end div.shopping-cart -->
-						</form>
-					</div>
+									</div>
+								</div><!-- end purchase-list-cart -->
+							</div> <!-- end div.list-cart -->
+						</div> <!-- end div.shopping-cart -->
+					</form>
 				</div>
-			</nav> <!-- end navbar -->
+			</div>
+		</nav> <!-- end navbar -->
+		<div class="home" id="home">
 			<div id="carouselExampleCaptions" class="carousel slide change-carousel" data-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
@@ -241,21 +199,307 @@
 		</div> <!-- end about -->
 		<div class="explore" id="explore">
 			<div class="container">
-				<div class="row change-row">
-					<div class="col-12 change-col-explore-top">
-						<h2 class="explore-title">Store</h2>
-						<div class="nodes-type">
-							<a href="#" class="btn btn-outline-secondary active">All</a>
-							<a href="#" class="btn btn-outline-secondary">Cruiser</a>
-							<a href="#" class="btn btn-outline-secondary">Sport</a>
-							<a href="#" class="btn btn-outline-secondary">Vespa</a>
-						</div>
-						<div class="search-input">
-							<i class="fas fa-search"></i>
-							<input type="text" class="form-control" placeholder="search items...">
+				<div class="header-row">
+					<h2 class="explore-title">Store</h2>
+					<div class="nodes-type">
+						<a href="#" class="btn btn-outline-secondary active" id="all">all</a>
+						<a href="#" class="btn btn-outline-secondary" id="cruiser">cruiser</a>
+						<a href="#" class="btn btn-outline-secondary" id="sport">sport</a>
+						<a href="#" class="btn btn-outline-secondary" id="vespa">vespa</a>
+					</div>
+					<div class="search-input">
+						<i class="fas fa-search"></i>
+						<input type="text" class="form-control" placeholder="search items...">
+					</div>
+				</div>
+				 <!-- end header row -->
+				<div class="row cruiser">
+					<div class="col-4">
+						<div class="card">
+							<div class="image-item">
+								<img src="image/cruiser (1).jpg" alt="" class="card-img-top w-100">
+								<div class="add-to-cart">
+									<a href="#" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></a>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="card-title text-center">Cruiser-X150</h4>
+								<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti.</p>
+								<p class="card-text text-right font-weight-bold">6.99</p>
+							</div>
 						</div>
 					</div>
-				</div> <!-- end row -->
+					<div class="col-4">
+						<div class="card">
+							<div class="image-item">
+								<img src="image/cruiser (2).jpg" alt="" class="card-img-top w-100">
+								<div class="add-to-cart">
+									<a href="#" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></a>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="card-title text-center">Cruiser-Y2000</h4>
+								<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti.</p>
+								<p class="card-text text-right font-weight-bold">9.99</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card">
+							<div class="image-item">
+								<img src="image/cruiser (3).jpg" alt="" class="card-img-top w-100">
+								<span class="lastest-item" id="lastest-item">new product</span>
+								<div class="add-to-cart">
+									<a href="#" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></a>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="card-title text-center">Cruiser-Z1653</h4>
+								<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti.</p>
+								<p class="card-text text-right font-weight-bold">11.99</p>
+							</div>
+						</div>
+					</div>
+				</div> <!-- end row 1 cruiser-->
+				<div class="row cruiser">
+					<div class="col-4">
+						<div class="card">
+							<div class="image-item">
+								<img src="image/cruiser (4).jpg" alt="" class="card-img-top w-100">
+								<div class="add-to-cart">
+									<a href="#" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></a>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="card-title text-center">Cruiser-X1505</h4>
+								<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti.</p>
+								<p class="card-text text-right font-weight-bold">12.99</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card">
+							<div class="image-item">
+								<img src="image/cruiser (5).jpg" alt="" class="card-img-top w-100">
+								<div class="add-to-cart">
+									<a href="#" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></a>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="card-title text-center">Cruiser-BA150</h4>
+								<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti.</p>
+								<p class="card-text text-right font-weight-bold">15.99</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card">
+							<div class="image-item">
+								<img src="image/cruiser (6).jpg" alt="" class="card-img-top w-100">
+								<div class="add-to-cart">
+									<a href="#" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></a>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="card-title text-center">Cruiser-V800</h4>
+								<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti.</p>
+								<p class="card-text text-right font-weight-bold">35.99</p>
+							</div>
+						</div>
+					</div>
+				</div> <!-- end row 2 cruiser-->
+				<div class="row cruiser">
+					<div class="col-4">
+						<div class="card">
+							<div class="image-item">
+								<img src="image/cruiser (7).jpg" alt="" class="card-img-top w-100">
+								<span class="lastest-item" id="lastest-item">new product</span>
+								<div class="add-to-cart">
+									<a href="#" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></a>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="card-title text-center">Cruiser-RaiserX</h4>
+								<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti.</p>
+								<p class="card-text text-right font-weight-bold">39.99</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card">
+							<div class="image-item">
+								<img src="image/cruiser (8).jpg" alt="" class="card-img-top w-100">
+								<div class="add-to-cart">
+									<a href="#" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></a>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="card-title text-center">Cruiser-Colaps</h4>
+								<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti.</p>
+								<p class="card-text text-right font-weight-bold">19.99</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card">
+							<div class="image-item">
+								<img src="image/cruiser (9).jpg" alt="" class="card-img-top w-100">
+								<div class="add-to-cart">
+									<a href="#" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></a>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="card-title text-center">Cruiser-Wiz25</h4>
+								<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti.</p>
+								<p class="card-text text-right font-weight-bold">7.99</p>
+							</div>
+						</div>
+					</div>
+				</div> <!-- end row 3 cruiser-->
+				<div class="row sport">
+					<div class="col-4">
+						<div class="card">
+							<div class="image-item">
+								<img src="image/sport (1).jpg" alt="" class="card-img-top w-100">
+								<div class="add-to-cart">
+									<a href="#" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></a>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="card-title text-center">Sport-R15</h4>
+								<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti.</p>
+								<p class="card-text text-right font-weight-bold">6.99</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card">
+							<div class="image-item">
+								<img src="image/sport (2).jpg" alt="" class="card-img-top w-100">
+								<span class="lastest-item" id="lastest-item">new product</span>
+								<div class="add-to-cart">
+									<a href="#" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></a>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="card-title text-center">Sport-RDX</h4>
+								<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti.</p>
+								<p class="card-text text-right font-weight-bold">11.99</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card">
+							<div class="image-item">
+								<img src="image/sport (3).jpg" alt="" class="card-img-top w-100">
+								<div class="add-to-cart">
+									<a href="#" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></a>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="card-title text-center">Sport-ROFL</h4>
+								<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti.</p>
+								<p class="card-text text-right font-weight-bold">25.99</p>
+							</div>
+						</div>
+					</div>
+				</div> <!-- end row sport -->
+				<div class="row vespa">
+					<div class="col-4">
+						<div class="card">
+							<div class="image-item">
+								<img src="image/vespa (1).jpg" alt="" class="card-img-top w-100">
+								<div class="add-to-cart">
+									<a href="#" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></a>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="card-title text-center">Vespa-LX2018</h4>
+								<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti.</p>
+								<p class="card-text text-right font-weight-bold">3.99</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card">
+							<div class="image-item">
+								<img src="image/vespa (2).jpg" alt="" class="card-img-top w-100">
+								<span class="lastest-item" id="lastest-item">new product</span>
+								<div class="add-to-cart">
+									<a href="#" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></a>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="card-title text-center">Vespa-LX2020</h4>
+								<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti.</p>
+								<p class="card-text text-right font-weight-bold">5.99</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card">
+							<div class="image-item">
+								<img src="image/vespa (3).jpg" alt="" class="card-img-top w-100">
+								<div class="add-to-cart">
+									<a href="#" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></a>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="card-title text-center">Vespa-LX2010</h4>
+								<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti.</p>
+								<p class="card-text text-right font-weight-bold">3.49</p>
+							</div>
+						</div>
+					</div>
+				</div> <!-- end row-1 vespa -->
+				<div class="row vespa">
+					<div class="col-4">
+						<div class="card">
+							<div class="image-item">
+								<img src="image/vespa (4).jpg" alt="" class="card-img-top w-100">
+								<div class="add-to-cart">
+									<a href="#" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></a>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="card-title text-center">Vespa-LX2017</h4>
+								<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti.</p>
+								<p class="card-text text-right font-weight-bold">2.99</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card">
+							<div class="image-item">
+								<img src="image/vespa (5).jpg" alt="" class="card-img-top w-100">
+								<div class="add-to-cart">
+									<a href="#" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></a>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="card-title text-center">Vespa-LX2019</h4>
+								<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti.</p>
+								<p class="card-text text-right font-weight-bold">3.99</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card">
+							<div class="image-item">
+								<img src="image/vespa (6).jpg" alt="" class="card-img-top w-100">
+								<span class="lastest-item" id="lastest-item">new product</span>
+								<div class="add-to-cart">
+									<a href="#" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></a>
+								</div>
+							</div>
+							<div class="card-body">
+								<h4 class="card-title text-center">Vespa-Elegant</h4>
+								<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, magnam perferendis nulla eveniet quia qui repudiandae corrupti.</p>
+								<p class="card-text text-right font-weight-bold">6.99</p>
+							</div>
+						</div>
+					</div>
+				</div> <!-- end row-2 vespa -->
 			</div>
 		</div> <!-- end explore -->
 	</div>

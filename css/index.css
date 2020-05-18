@@ -5,6 +5,19 @@
 	box-sizing: border-box;
 }
 
+div[class*='alert '] {
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: none;
+}
+
+img.intro-image {
+    clip-path: circle();
+    margin: 0 5px;
+}
+
 .header-row {
 	display: flex;
 	flex-direction: column;
@@ -91,11 +104,11 @@ span#lastest-item {
 }
 
 .body-list-cart {
-	overflow-y: scroll;
-	height: 418px;
+	overflow: scroll;
+	height: 420px;
 }
 
-li.list-group-item {border-radius: unset !important;border-bottom: 1px solid #cecece;}
+li.list-group-item {border: none;border-radius: unset !important;border-bottom: 1px solid #6c757d;margin-bottom: auto;}
 
 /* .list-group-item:last-child {
 	border: none;
@@ -113,7 +126,7 @@ span.purchase-total-price::before {
 .purchase-list-cart {
 	padding: 1rem 0px;
 	color: #292929;
-	border-top: 2px solid #5c5d5c;
+	border-top: 2px solid #6c757d;
 	text-transform: uppercase;
 }
 
@@ -148,12 +161,14 @@ p.price {
 }
 
 p.shopping-cart-name {
-	line-height: 1.2rem;
 	margin-bottom: 0;
+	text-transform: uppercase;
 }
 
-img.img-thumbnail.w-100.shopping-cart-image {
+img.w-100.shopping-cart-image {
 	height: 50px;
+	box-shadow: 0px 0px 2px;
+	border-radius: 5px;
 }
 
 li.list-group-item div[class*="col-"] {
@@ -161,6 +176,18 @@ li.list-group-item div[class*="col-"] {
 	justify-content: center;
 	align-items: center;
 	padding: 0;
+}
+
+.col-4.remove-button a {
+    padding: 2px 5px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.col-8.adjust-button-amounts, .col-4.remove-button {
+    justify-content: flex-end !important;
 }
 
 .col-3.change-price {
@@ -181,14 +208,13 @@ li.list-group-item.change-list-cart {
 	grid-template-columns: repeat(3,1fr);
 }
 
-input.amounts {
-	width: 30px;
+input.amount {
+	width: 55px;
 	text-align: center;
-	border-radius: 5px;
-	border: 1px solid #607D8B;
+	border-radius: 7px;
+	border: 1px solid #565656;
 	outline: none;
 	margin: 0 0.5rem;
-	cursor: auto;
 }
 
 li.list-group-item i {
@@ -203,16 +229,17 @@ li.list-group-item i {
 	color: #5c5d5c;
 	margin: 0.3rem 0;
 	transition: 0.3s;
+	cursor: pointer;
 }
 
 li.list-group-item i:hover {
-	background: #5c5d5c;
+	background: #6c757d;
 	color: white;
 	transform: scale(1.2);
 }
 
 h3.list-title {
-	color: #5c5d5c;
+	color: #6c757d;
 	text-transform: uppercase;
 }
 
@@ -222,7 +249,7 @@ h3.list-title {
 	display: flex;
 	justify-content: center;
 	padding: 0.5rem;
-	border-bottom: 2px solid #5c5d5c;
+	border-bottom: 2px solid #6c757d;
 }
 
 div.list-cart {
@@ -233,8 +260,10 @@ div.list-cart {
 	right: 8rem;
 	background: white;
 	border-radius: 5px;
-	border: 1px solid black;
+	border: 2px solid #6c757d;
 	word-spacing: normal;
+	color: #5c5d5c;
+	box-shadow: 0px 0px 3px black, 0px 0px 6px black;
 	display: none;
 }
 
@@ -247,7 +276,7 @@ div.list-cart::before {
 	display: block;
 	position: fixed;
 	width: 30px;
-	height: 42px;
+	height: 44px;
 	background: #ffffff;
 	top: 70px;
 	right: 260px;
@@ -274,7 +303,7 @@ div#explore {
 .search-input {
 	width: 50%;
 	position: relative;
-	margin-top: 1rem;
+	margin: 1rem;
 }
 
 .search-input input {
@@ -385,10 +414,11 @@ span.display-3.title {
 	border-radius: 25px;
 	padding: 0 0.5rem;
 	text-transform: uppercase;
-	background: linear-gradient(to top, white 50%, #009688);
+	background: linear-gradient(131deg, #ffffff 44%, #8BC34A 41%, #4CAF50 64%, #FFC107 56%, #FF9800 85%, #00BCD4 80%, #03A9F4 92%, white 87%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font-weight: 700;
+	letter-spacing: 5px;
 }
 
 span.display-3.title::before,span.display-3.title::after {
@@ -402,7 +432,7 @@ span.display-3.title::before,span.display-3.title::after {
 span.display-3.title::before {
 	top: 100%;
 	left: 10px;
-	background: linear-gradient(to bottom, white 60%, #009688 125%);
+	background: linear-gradient(to bottom, white 60%, #9E9E9E 125%);
 	animation: from-top 2s forwards;
 	animation-delay: 2s;
 }
@@ -410,7 +440,7 @@ span.display-3.title::before {
 span.display-3.title::after {
 	top: 100%;
 	right: 10px;
-	background: linear-gradient(to top, white 60%, #009688 125%);
+	background: linear-gradient(to top, white 60%, #9E9E9E 125%);
 	animation: from-bottom 2s forwards;
 	animation-delay: 2s;
 }
@@ -426,8 +456,8 @@ div.change-carousel {
 	height: 100%;
 	top: 0;
 	left: 0;
-	color: white;
-	background: #0000007d;
+	color: #ffffff;
+	background: #00000078;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -437,7 +467,7 @@ div.change-carousel {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-weight: 100;
+	font-weight: 200;
 	padding: 1.5rem;
 	position: relative;
 	overflow: hidden;
@@ -453,7 +483,7 @@ div.change-carousel {
 .carousel-title h3::before {
 	top: 10px;
 	left: 100%;
-	background: linear-gradient(to right, white 70%, #009688 110%);
+	background: linear-gradient(to right, white 70%, #9E9E9E 110%);
 	animation: from-left 2s forwards;
 	animation-delay: 1s;
 }
@@ -461,12 +491,12 @@ div.change-carousel {
 .carousel-title h3::after {
 	bottom: 10px;
 	right: 100%;
-	background: linear-gradient(to left, white 70%, #009688 110%);
+	background: linear-gradient(to left, white 70%, #9E9E9E 110%);
 	animation: from-right 2s forwards;
 	animation-delay: 1s;
 }
 
-div.change-carousel img {
+div.change-carousel .carousel-inner img {
 	width: 100%;
 	height: -webkit-fill-available;
 }
@@ -507,7 +537,7 @@ span.total-price::before {
 span#number {
 	width: 20px;
 	height: 20px;
-	background: #000000;
+	background: #1b1b1b;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
@@ -527,6 +557,11 @@ div.shopping-cart {
 	cursor: pointer;
 	color: black;
 	background: whitesmoke;
+	transition: 0.3s;
+}
+
+div.shopping-cart.active {
+    box-shadow: 0px 0px 5px white, 0px 0px 10px #c3c3c3;
 }
 
 div.shopping-cart i.fas.fa-shopping-cart {
@@ -573,10 +608,10 @@ div#app {
 	width: 5px;
 }
 .body-list-cart::-webkit-scrollbar-track {
-	background: #efefef;
+	background: transparent;
 }
 .body-list-cart::-webkit-scrollbar-thumb {
-	background: #828282;
+	background: #3F51B5;
 }
 .body-list-cart::-webkit-scrollbar-thumb:hover {
 	background: #b5b5b5; 

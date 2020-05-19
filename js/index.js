@@ -64,33 +64,63 @@ $(document).ready(function() {
 	//turn on-off list-board-cart 
 
 	//<--------------------------------------------------------------------------------------------------------------->
-	//setup shopping-cart-items
 
+	//<--------------------------------------------------------------------------------------------------------------->
+	//setup shopping-cart-items
 	let INVENTORY = [];
 	let id = 0;
-	$('i.fa-shopping-cart').bind('click', function(event) {
-		event.preventDefault();
-		const cardItem = $(this).parentsUntil('.row').find('.card');
-		const nameCard = $(cardItem.find('.card-body h4')).text();
-		const imageCard = $(cardItem.find('img')).attr('src');
-		const priceCard = $(cardItem.find('.cast')).text();
 
-		if(INVENTORY.find(item => item.name === nameCard)){
-			$('.name-item').text(nameCard);
-			$('div.alert.alert-secondary').css('display', 'block');
+	$('a.btn-outline-warning').bind('click', function(event) {
+		event.preventDefault();
+		const ITEM = $(this).parent().parent().parent();
+		const nameItem = ITEM.find('h4').text();
+		const imageItem = ITEM.find('img').attr('src');
+		const priceItem = ITEM.find('.cast').text();
+		const existedObj = INVENTORY.find(obj => obj.name === nameItem);
+
+		if(existedObj){
+			$('.name-item').text(nameItem);
+			$('div.alert-secondary').css('display', 'block');
 			setTimeout(() => {
-				$('div.alert.alert-secondary').css('display', 'none');
-			}, 5000);
-			//if item was in cart, alert-board is going to be appearance
+				$('div.alert-secondary').css('display', 'none');
+			},5000);
+			$('html').stop().animate({
+				scrollTop: $('#explore').offset().top - heightBar + 1
+			}, 100);
 		}else{
-			addItem(nameCard,id,imageCard,priceCard);
+			//update INVENTORY if item is not exist
+			addItem(nameItem,id,imageItem,priceItem);
 			INVENTORY.push({
-				name  : nameCard,
-				id 	  : id,
-				image : imageCard,
-				price : priceCard
+				name   : nameItem,
+				image  : imageItem,
+				price  : priceItem,
+				id     : id,
+				amount : 1,
 			});
 			id++;
+		}
+		// id++;
+
+		$('input.amount').off('change').on('change',function(event){
+			event.preventDefault();
+			const input = event.target;
+			if(isNaN(input.value) || input.value <= 0){
+				input.value = 1;
+			}else if(input.value >= 99) {
+				input.value = 99;
+			}
+			updateCartItem(this,input.value);
+		});
+
+
+
+		//display amount of item which added to cart
+		$('#number').text(INVENTORY.length);
+		//set style to body-list-cart
+		if(INVENTORY.length > 4){
+			$('.body-list-cart').css({overflow : 'scroll'});
+		}else{
+			$('.body-list-cart').css({overflow : 'hidden'});
 		}
 	});
 
@@ -116,12 +146,30 @@ $(document).ready(function() {
 								<a href="#" class="btn btn-outline-secondary">remove</a>
 							</div>
 						</div>
-					</li> <!--end list-item-->`
-
+					</li> <!--end list-item-->`;
 		$('ul.list-group').append(item);
 	}
-	const totalPrice = () => {
-		$('.list-group-item')
+	const updateCartItem = (input,value) => {
+		const item = $(input).parent().parent().parent();
+		const itemId = $(item).attr('id');
+		const itemPrice = $(item).find('.price');
+		const itemQuantity = value;
+		let totalPrice = 0;
+
+		//update price of item
+		totalPrice += Math.round(Number(INVENTORY[itemId].price) * itemQuantity * 100) / 100;
+		if(totalPrice >= 1000){
+			totalPrice = Math.round(Number(INVENTORY[itemId].price) * itemQuantity / 10) / 100;
+			$(item).find('.symbol-price').text('B');
+		}else{
+			$(item).find('.symbol-price').text('K');
+		}
+		$(itemPrice).text(totalPrice);
+
+		// update new INVENTORY
+		INVENTORY[itemId].amount = itemQuantity;
+		INVENTORY[itemId].totalPrice = totalPrice;
+		console.log(INVENTORY);
 	}
 	//setup shopping-cart-items
 	//<--------------------------------------------------------------------------------------------------------------->

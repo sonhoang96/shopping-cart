@@ -35,37 +35,57 @@
 						</li>
 					</ul>
 					<form class="form-inline my-2 my-lg-0 form-change">
-						<div class="phone mr-5">
-							<i class="fas fa-phone"></i>
-							<span class="phone-number">+84987654321</span>
-						</div>
-						<div class="shopping-cart" id="cart">
-							<i class="fas fa-shopping-cart"></i>
-							<span class="amount" id="number">0</span>
-						</div> <!-- end div.shopping-cart -->
-						<div class="list-cart" id="list">
-							<div class="header-list-cart">
-								<h3 class="list-title">shopping cart</h3>
-							</div>
-							<div class="body-list-cart">
-								<ul class="list-group">
+						<div class="account mr-5">
+							<i class="fas fa-user"></i>
+							<span class="account-user">user@gg_mail.com</span>
+							<div class="info-board">
+								<ul class="list-group" id="info-user">
+								  <li class="list-group-item">
+								  <i class="fas fa-user-cog"></i>
+								  	Setting Account
+								  </li>
+								  <li class="list-group-item" id="board-removed-items">
+								  	<i class="far fa-trash-alt"></i>
+								  	items removed
+								  </li>
+								  <ul class="list-group" id='removed-items'>
+								  </ul>
+								  <li class="list-group-item">
+								  	<i class="fas fa-door-open"></i>
+								  	Log out
+								  </li>
 								</ul>
-							</div> <!-- end body-list-cart -->
-							<div class="purchase-list-cart">
-								<div class="container">
-									<div class="row">
-										<div class="col-6">
-											<h4 class="purchase-title">total</h4>
-											<span class="purchase-total-price">999.99<span class="symbol-price">K</span></span>
-										</div>
-										<div class="col-6">
-											<a href="#" class="btn btn-outline-dark">purchase</a>
-											<a href="#" class="btn btn-outline-dark">remove all</a>
+							</div>
+						</div>
+						<div class="cart">
+							<div class="shopping-cart" id="cart">
+								<i class="fas fa-shopping-cart"></i>
+								<span class="amount" id="number">0</span>
+							</div>
+							<div class="list-cart" id="list">
+								<div class="header-list-cart">
+									<h3 class="list-title">shopping cart</h3>
+								</div>
+								<div class="body-list-cart">
+									<ul class="list-group" id="list-cart">
+									</ul>
+								</div> <!-- end body-list-cart -->
+								<div class="purchase-list-cart">
+									<div class="container">
+										<div class="row">
+											<div class="col-6">
+												<h4 class="purchase-title">total</h4>
+												<span class="purchase-total-price">0</span>
+											</div>
+											<div class="col-6">
+												<a href="#" class="btn btn-outline-dark" id="purchase-btn">purchase</a>
+												<a href="#" class="btn btn-outline-dark" id="remove-all-btn">remove all</a>
+											</div>
 										</div>
 									</div>
-								</div>
-							</div><!-- end purchase-list-cart -->
-						</div> <!-- end div.list-cart -->
+								</div><!-- end purchase-list-cart -->
+							</div> <!-- end div.list-cart -->
+						</div> <!-- end div.shopping-cart -->
 					</form>
 				</div>
 			</div>
@@ -124,7 +144,7 @@
 						<i class="fas fa-search"></i>
 						<input type="text" class="form-control" placeholder="search items...">
 					</div>
-					<div class="alert alert-secondary"><span class="name-item"></span> is already added in cart</div>
+					<div class="alert alert-secondary"><span class="name-item"></span> is already in cart</div>
 				</div>
 				 <!-- end header row -->
 				<div class="row" moto="cruiser">

@@ -60,14 +60,20 @@ $(document).ready(function() {
 		event.preventDefault();
 		$('#list').toggleClass('open-list');
 		$('#cart').toggleClass('active');
+		// turn off .info-board when #cart turn on
+		if($('#cart').hasClass('active') || $('#list').hasClass('open-list')){
+			$('.info-board').removeClass('active');
+		}
 	});
 	//turn on-off list-board-cart 
 
 	//<--------------------------------------------------------------------------------------------------------------->
 
+
 	//<--------------------------------------------------------------------------------------------------------------->
 	//setup shopping-cart-items
 	let INVENTORY = [];
+	let removedInventory = [];
 	let id = 0;
 
 	$('a.btn-outline-warning').bind('click', function(event) {
@@ -91,16 +97,17 @@ $(document).ready(function() {
 			//update INVENTORY if item is not exist
 			addItem(nameItem,id,imageItem,priceItem);
 			INVENTORY.push({
-				name   : nameItem,
-				image  : imageItem,
-				price  : priceItem,
-				id     : id,
-				amount : 1,
+				name      : nameItem,
+				image     : imageItem,
+				price     : priceItem + 'K',
+				id        : id,
+				amount 	  : 1,
+				totalPrice: priceItem + 'K',
+				status    : 'on cart'
 			});
 			id++;
+			updateTotalPrice();
 		}
-		// id++;
-
 		$('input.amount').off('change').on('change',function(event){
 			event.preventDefault();
 			const input = event.target;
@@ -112,18 +119,23 @@ $(document).ready(function() {
 			updateCartItem(this,input.value);
 		});
 
+		$('.remove-button a').off('click').on('click',function(event){
+			event.preventDefault();
+			removeCartItem(this);
+		});
 
 
 		//display amount of item which added to cart
 		$('#number').text(INVENTORY.length);
 		//set style to body-list-cart
-		if(INVENTORY.length > 4){
+		if(INVENTORY.length > 3){
 			$('.body-list-cart').css({overflow : 'scroll'});
 		}else{
 			$('.body-list-cart').css({overflow : 'hidden'});
 		}
 	});
 
+	//function add item to cart
 	const addItem = (name,id,image,price) => {
 		let item = `<li class="list-group-item" id='${id}'>
 						<div class="row">
@@ -147,30 +159,164 @@ $(document).ready(function() {
 							</div>
 						</div>
 					</li> <!--end list-item-->`;
-		$('ul.list-group').append(item);
+		$('#list-cart').append(item);
 	}
+
+	//function update amounts and totalPrice of item in INVENTORY and display to screen 
 	const updateCartItem = (input,value) => {
 		const item = $(input).parent().parent().parent();
 		const itemId = $(item).attr('id');
 		const itemPrice = $(item).find('.price');
 		const itemQuantity = value;
+		const find = INVENTORY.find(item => item.id === Number(itemId));
+		const elementPosition = INVENTORY.indexOf(find);
+		const priceConverter = parseFloat(INVENTORY[elementPosition].price); // take part number
 		let totalPrice = 0;
 
-		//update price of item
-		totalPrice += Math.round(Number(INVENTORY[itemId].price) * itemQuantity * 100) / 100;
+		//update totalprice of item in INVENTORY
+		totalPrice += Math.round(priceConverter * itemQuantity * 100) / 100;
+
 		if(totalPrice >= 1000){
-			totalPrice = Math.round(Number(INVENTORY[itemId].price) * itemQuantity / 10) / 100;
-			$(item).find('.symbol-price').text('B');
+			totalPrice = Math.round(priceConverter * itemQuantity / 10) / 100;
+			//change type of value from K(thousand) ---> M(Million)
+			INVENTORY[elementPosition].totalPrice = String(totalPrice) + 'M';
+
+			$(item).find('.symbol-price').text('M');
 		}else{
 			$(item).find('.symbol-price').text('K');
+			INVENTORY[elementPosition].totalPrice = String(totalPrice) + 'K';
 		}
+		INVENTORY[elementPosition].amount = Number(itemQuantity);
+
 		$(itemPrice).text(totalPrice);
 
-		// update new INVENTORY
-		INVENTORY[itemId].amount = itemQuantity;
-		INVENTORY[itemId].totalPrice = totalPrice;
-		console.log(INVENTORY);
+		// update display total price of whole items
+		updateTotalPrice();
 	}
+
+	// function remove this item
+	const removeCartItem = (button) => {
+		const item = $(button).parent().parent().parent();
+		const itemId = $(item).attr('id');
+		const find = INVENTORY.find(item => item.id === Number(itemId));
+		const elementPosition = INVENTORY.indexOf(find);
+		const elementremoved = INVENTORY.slice(elementPosition,elementPosition + 1);
+		//remove item from list cart
+		$(item).remove();
+
+		//update removedInventory which elements removed in INVENTORY
+		removedInventory = removedInventory.concat(elementremoved);
+		addRemovedItems();
+
+		//remove item in INVENTORY
+		INVENTORY.splice(elementPosition,1);
+
+		//display amount of item after remove item from cart
+		$('#number').text(INVENTORY.length);
+		//set style to body-list-cart
+		if(INVENTORY.length > 4){
+			$('.body-list-cart').css({overflow : 'scroll'});
+		}else{
+			$('.body-list-cart').css({overflow : 'hidden'});
+		}
+		// update display total price of whole items
+		updateTotalPrice();
+	}
+
+	//function update whole totalPice items
+	const updateTotalPrice = () => {
+		let totalWholePrice = 0;
+
+		INVENTORY.forEach(item => {
+			totalWholePrice += parseFloat(item.price) * item.amount;
+		});
+		// console.log(Math.round(parseInt(totalWholePrice / 10)) / 100);
+		if(totalWholePrice < 1000){
+			$('.purchase-total-price').text(Math.round(totalWholePrice * 100) / 100 + 'K');
+			if(totalWholePrice === 0){
+				$('.purchase-total-price').text(0);
+			}
+		}else{
+			$('.purchase-total-price').text(Math.round(parseInt(totalWholePrice / 10)) / 100 + 'M');
+		}
+	}
+
+	// button remove all items in list cart
+	$('#remove-all-btn').bind('click', function(event) {
+		event.preventDefault();
+		// $('#list-cart').children().remove();
+		const buttonsRemove = $('.remove-button a');
+		for(let i = 0; i < buttonsRemove.length; i++){
+			removeCartItem(buttonsRemove[i]);
+		}
+	});
+
 	//setup shopping-cart-items
+	//<--------------------------------------------------------------------------------------------------------------->
+
+
+
+	//<--------------------------------------------------------------------------------------------------------------->
+	//setup history removed item
+
+	//open and close div.info-board
+	$('i.fas.fa-user, .account-user').bind('click', function(event) {
+		event.preventDefault();
+		$(this).parent().find('.info-board').toggleClass('active');
+		// turn off .#cart and #list when div.info-board turn on
+		if($('.info-board').hasClass('active')){
+			$('#cart').removeClass('active');
+			$('#list').removeClass('open-list');
+			//remove all class active in div.info-board
+			if($('#info-user li.list-group-item').hasClass('active')){
+				$('#info-user li.list-group-item').removeClass('active');
+				$('#removed-items').removeClass('active');
+			}
+		}
+	});
+
+	//add active to selected list in #info-user
+	$('#info-user li.list-group-item').bind('click', function(event) {
+		event.preventDefault();
+		$('#info-user li.list-group-item').removeClass('active');
+		$(this).addClass('active');
+
+		//on or off display of removed list items
+		if($('#board-removed-items').hasClass('active')){
+			$('#removed-items').addClass('active');
+		}else{
+			$('#removed-items').removeClass('active');
+		}
+	});
+
+	//function check removed items to removed list items
+	const addRemovedItems = () => {
+		removedInventory.forEach(item => {
+			const removedItem = `<li class="list-group-item" id='${item.id}'>
+									<div class="removed-image">
+							  			<img src="${item.image}" alt="" class='w-100 img-thumbnail'>
+							  		</div>
+							  		<div class="removed-info">
+							  			<p class="removed-name">${item.name}</p>
+							  			<div class="removed-info-others">
+							  				<p class="removed-price">${item.price}</p>
+							  				<p class="removed-amount">${item.amount}</p>
+							  			</div>
+							  		</div>
+						  		</li>`;
+			if(item.status === 'on cart'){
+				$('#removed-items').append(removedItem);
+				item.status = 'removed';
+				if($('#removed-items').children().length > 3){
+					$('#removed-items').css({
+						height: '292px',
+						overflowY: 'scroll'
+					});
+				}
+			}
+		});
+		console.log(removedInventory)
+	}
+	//setup history removed item
 	//<--------------------------------------------------------------------------------------------------------------->
 });

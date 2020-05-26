@@ -133,6 +133,14 @@ $(document).ready(function() {
 		}else{
 			$('.body-list-cart').css({overflow : 'hidden'});
 		}
+		// screen width
+		if($(window).width() <= 990){
+			if(INVENTORY.length > 2){
+				$('.body-list-cart').css({overflow : 'scroll'});
+			}else{
+				$('.body-list-cart').css({overflow : 'hidden'});
+			}
+		}
 	});
 
 	//function add item to cart
@@ -259,22 +267,6 @@ $(document).ready(function() {
 	//<--------------------------------------------------------------------------------------------------------------->
 	//setup history removed item
 
-	//open and close div.info-board
-	$('i.fas.fa-user, .account-user').bind('click', function(event) {
-		event.preventDefault();
-		$(this).parent().find('.info-board').toggleClass('active');
-		// turn off .#cart and #list when div.info-board turn on
-		if($('.info-board').hasClass('active')){
-			$('#cart').removeClass('active');
-			$('#list').removeClass('open-list');
-			//remove all class active in div.info-board
-			if($('#info-user li.list-group-item').hasClass('active')){
-				$('#info-user li.list-group-item').removeClass('active');
-				$('#removed-items').removeClass('active');
-			}
-		}
-	});
-
 	//add active to selected list in #info-user
 	$('#info-user li.list-group-item').bind('click', function(event) {
 		event.preventDefault();
@@ -318,5 +310,35 @@ $(document).ready(function() {
 		console.log(removedInventory)
 	}
 	//setup history removed item
+	//<--------------------------------------------------------------------------------------------------------------->
+
+	//<--------------------------------------------------------------------------------------------------------------->
+	//Responsive
+		const screen = $(window);
+		if(screen.width() <= 990){
+			$('i.fas.fa-user, .account-user').unbind('click');
+		}
+		if (screen.width() <= 766) {
+			$('#about .container').removeClass('container').addClass('container-fluid');
+			$('#explore .col-md-4 .card').addClass('mb-5');
+		} else {
+			//open and close div.info-board
+			$('i.fas.fa-user, .account-user').bind('click', function(event) {
+				event.preventDefault();
+				$(this).parent().find('.info-board').toggleClass('active');
+				// turn off .#cart and #list when div.info-board turn on
+				if($('.info-board').hasClass('active')){
+					$('#cart').removeClass('active');
+					$('#list').removeClass('open-list');
+					//remove all class active in div.info-board
+					if($('#info-user li.list-group-item').hasClass('active')){
+						$('#info-user li.list-group-item').removeClass('active');
+						$('#removed-items').removeClass('active');
+					}
+				}
+			});
+			$('#about .container').removeClass('container-fluid').addClass('container');
+		}
+	//Responsive
 	//<--------------------------------------------------------------------------------------------------------------->
 });
